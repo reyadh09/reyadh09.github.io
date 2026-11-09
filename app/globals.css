@@ -113,7 +113,7 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
 .page-content { min-width: 0; }
 .page-heading { padding-bottom: var(--space-section); }
 .intro { font-size: var(--text-item); line-height: var(--line-intro); color: var(--body-text); }
-:is(.intro, .news-list) a:hover { color: var(--navy); text-decoration-line: underline; }
+.intro a:hover { color: var(--navy); text-decoration-line: underline; }
 .content-section, .lab-section, .publications-section { border-top: var(--section-rule); padding-top: var(--space-section); }
 .content-section, .lab-section { padding-bottom: var(--space-section); }
 .content-section:last-child, .lab-section:last-child { padding-bottom: 0; }
@@ -150,7 +150,7 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
 .publication h3 { margin-bottom: var(--space-detail); }
 .publication h3 a { display: block; position: relative; padding-right: var(--space-item); color: inherit; }
 .publication h3 svg { position: absolute; right: 0; top: 6px; opacity: .7; }
-.publication h3 a:hover { color: var(--blue); text-decoration-line: underline; }
+.publication h3 a:hover, .news-list a:hover { color: var(--blue); text-decoration-line: underline; }
 .authors { margin-bottom: var(--space-detail); }
 .journal { font-family: var(--serif); font-size: var(--text-item); font-weight: var(--serif-weight); line-height: var(--line-body); font-style: italic; color: var(--body-text); }
 
