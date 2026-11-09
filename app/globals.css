@@ -132,6 +132,7 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
 .news-list cite { font-family: var(--serif); font-weight: var(--serif-weight); }
 
 /* Biography. */
+.page-biography { --date-width: 112px; }
 .page-biography .content-section:first-of-type { border-top: 0; padding-top: 0; }
 
 /* Research. */
