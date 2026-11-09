@@ -380,7 +380,7 @@ CV 추가 시 기존 경력 기록 9개·연구 관심사 4개·논문 8개의 �
 - 사용자가 승인한 커밋을 `main`에 반영하면 Cloudflare가 공개 버전을 빌드한다. 승인받기 전에는 `main`에 변경을 올리지 않는다. `main`이 검토 이후에 바뀌면 변경을 합친 결과를 다시 검토한다.
 - 검토 주소는 링크로 열 수 있다. GitHub 저장소와 검토용 페이지에는 비공개 자료를 올리지 않는다.
 - GitHub Pages는 `Deploy from a branch`의 `gh-pages` / `(root)`에서 정적 파일을 제공한다. `seongholee5.github.io`는 주소를 유지하며, Cloudflare 공개 주소와 독립적으로 배포된다. 저장소에 별도 Actions 워크플로 파일을 두지 않는다.
-- 승인본 공개 시 `main`의 소스로 빌드하고 검사를 통과한 `dist/client/`의 내용과 `.nojekyll`을 `gh-pages`에 올린다. GitHub Pages 배포 완료 후 `github.io`에서 Home, Biography, Research, Lab, CV를 확인한다. 문서만 수정했으면 공개 정적 파일을 다시 게시할 필요는 없다.
+- 승인본 공개 시 `main`의 소스로 빌드하고 검사를 통과한 `dist/client/`의 내용과 `.nojekyll`을 `gh-pages`에 올린다. GitHub가 기본 `pages build and deployment` 실행을 생성한다. `github-pages` 환경이 검토 대기 상태이면 지정 검토자가 실행 화면에서 `Review deployments` → `github-pages` → `Approve and deploy`로 승인한다. 배포 완료 후 `github.io`에서 Home, Biography, Research, Lab, CV를 확인한다. 문서만 수정했으면 공개 정적 파일을 다시 게시할 필요는 없다.
 - 다른 저장소로 복사하거나 별도의 배포용 토큰을 관리하지 않는다.
 
 ### 실행과 검증
