@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Seong-ho Lee | About me",
   description: "Seong-ho Lee, Assistant Professor, Department of Statistics, University of Seoul.",
   icons: {
-    icon: "/favicon.svg?v=navy",
-    shortcut: "/favicon.svg?v=navy",
+    icon: "/favicon.svg?v=sigma",
+    shortcut: "/favicon.svg?v=sigma",
   },
 };
 
