@@ -1,4 +1,4 @@
-name: Build and deploy website
+name: Preview and approve website deployment
 on:
   workflow_dispatch:
   push:
@@ -12,6 +12,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,9 +25,30 @@ jobs:
       - run: npm run typecheck
       - run: npm run build
       - uses: actions/configure-pages@v5
+      - name: Upload website preview
+        id: preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-preview
+          path: dist/client/
+          if-no-files-found: error
+          retention-days: 7
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist/client
+          retention-days: 7
+      - name: Explain how to review the preview
+        env:
+          PREVIEW_URL: ${{ steps.preview.outputs.artifact-url }}
+        run: |
+          {
+            echo '### Website preview'
+            printf '[Download website-preview ZIP](%s)\n\n' "$PREVIEW_URL"
+            echo 'Extract the ZIP and open a terminal in the directory containing index.html.'
+            echo 'Run `python3 -m http.server 8000 --bind 127.0.0.1` (Windows: use `py` instead of `python3`).'
+            echo 'Open http://127.0.0.1:8000/ and review the pages before selecting **Review deployments**.'
+            echo 'This run publishes the same build only after the repository owner approves it. Artifacts expire after 7 days.'
+          } >> "$GITHUB_STEP_SUMMARY"
   deploy:
     needs: build
     runs-on: ubuntu-latest
