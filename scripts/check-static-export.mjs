@@ -49,6 +49,11 @@ assert.doesNotMatch(cv, /class="site-header"|Welcome!|Current members|Google Sch
 const home = await readFile(join(output, 'index.html'), 'utf8');
 assert.match(home, /href="\/cv" target="_blank"/);
 assert.match(home, /Recent News/);
+const news = home.match(/<ul class="news-list"[^>]*>([\s\S]*?)<\/ul>/)?.[1];
+assert.ok(news, 'Missing Recent News list');
+for (const [link] of news.matchAll(/<a\b[^>]*>/g)) {
+  assert.match(link, /\btarget="_blank"/, 'Recent News links must open in a new tab');
+}
 assert.doesNotMatch(home, /id="employment"/);
 const biography = await readFile(join(output, 'biography/index.html'), 'utf8');
 for (const section of ['employment', 'education', 'grants', 'appointment', 'awards']) {
