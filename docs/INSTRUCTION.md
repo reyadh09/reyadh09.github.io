@@ -194,7 +194,9 @@ Home·Biography·Research·Lab은 모든 화면에서 동일한 크기를 사용
 
 ### Biography
 
-순서: **Biography → Employment → Education → Grants → Appointment → Awards**.
+순서: **Employment → Education → Grants → Appointment → Awards**.
+
+- 화면에는 별도 Biography 제목이나 첫 구분선을 표시하지 않는다. 스크린 리더용 페이지 제목은 유지한다.
 
 - 경력 설명 등 일반 본문은 14px/24px이다.
 - 기록은 `RecordRow(date, title, details, location?)`를 재사용한다. 넓은 화면·중간 화면에서는 왼쪽 날짜 열과 오른쪽 내용 열(제목 → 소속/설명 → 장소/기관)을 사용한다.

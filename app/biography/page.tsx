@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Seong-ho Lee | Biography" };
 export default function BiographyPage() {
   return (
     <AcademicShell active="biography">
-      <header className="page-heading biography-heading"><h1>Biography</h1></header>
+      <h1 className="sr-only">Biography</h1>
       {academicSections.map(section => (
         <Section key={section.id} title={section.title} id={section.id}>
           {section.records.map(record => <RecordRow key={`${record.date}-${record.title}`} {...record} />)}
