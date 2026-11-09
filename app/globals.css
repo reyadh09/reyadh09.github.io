@@ -47,7 +47,7 @@
   --portrait-width: var(--profile-width);
   --portrait-padding: 6px;
   --profile-contact-gap: 12px;
-  --date-width: 128px;
+  --date-width: 112px;
   --year-width: 48px;
   --line-title: 36px;
   --line-section: 32px;
@@ -131,7 +131,6 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
 .news-list cite { font-family: var(--serif); font-size: var(--text-item); font-weight: var(--serif-weight); }
 
 /* Biography. */
-.page-biography { --date-width: 112px; }
 .page-biography .content-section:first-of-type { border-top: 0; padding-top: 0; }
 
 /* Research. */

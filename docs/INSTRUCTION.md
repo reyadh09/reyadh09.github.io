@@ -258,7 +258,7 @@ Home·Biography·Research·Lab은 모든 화면에서 동일한 크기를 사용
 | 페이지 위 / 아래 padding | 24 / 48px | 16 / 32px | 0, 페이지 여백은 별도 적용 |
 | 페이지 좌우 padding | >900px: 32px, ≤900px: 24px | 24px | 0, 페이지 좌우 여백 18mm |
 | 도구 영역 아래 margin | 32px | 24px | 도구 영역 숨김 |
-| 경력 날짜 열 / 내용과의 gap | 128px / 16px | 1열, 내용 아래 날짜, gap 4px | 92pt / 10pt |
+| 경력 날짜 열 / 내용과의 gap | 112px / 16px | 1열, 내용 아래 날짜, gap 4px | 84pt / 10pt |
 | 논문 연도 열 / 내용과의 gap | 48px / 16px | 1열, 내용 아래 연도, gap 4px | 34pt / 10pt |
 
 - 버튼은 오른쪽 정렬이며 파란 배경·흰 글씨·1px 파란 테두리, padding 세로 8px·가로 16px, 모서리 2px이다. hover 배경은 남색이다. 홈페이지의 텍스트 링크 hover 규칙을 버튼에 추가하지 않는다.
