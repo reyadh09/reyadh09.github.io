@@ -26,7 +26,7 @@ const recentNews = [
 export default function HomePage() {
   return (
     <AcademicShell active="home">
-      <header className="page-heading welcome-heading"><h1>Welcome!</h1><p className="intro">I'm Seong-ho Lee, an assistant professor in the Department of Statistics at the University of Seoul. Before joining UoS, I was a research fellow at the University of Michigan. I completed my Ph.D. in Statistics at The Pennsylvania State University under the guidance of <a href="http://sites.psu.edu/yanyuanma/" target="_blank" rel="noopener noreferrer">Dr. Yanyuan Ma</a>.</p></header>
+      <header className="page-heading welcome-heading"><h1>Welcome!</h1><p className="intro">I'm Seong-ho Lee, an assistant professor in the Department of Statistics at the University of Seoul. Before joining UoS, I was a research fellow at the University of Michigan. I completed my Ph.D. in Statistics at The Pennsylvania State University under the guidance of <a href="http://sites.psu.edu/yanyuanma/" target="_blank" rel="noopener noreferrer">Dr. Yanyuan Ma{"\u202f"}<Arrow /></a>.</p></header>
       <Section title="Recent News" id="recent-news">
         <ul className="news-list" role="list">
           {recentNews.map(({ date, text }) => (
