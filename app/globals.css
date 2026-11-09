@@ -126,7 +126,7 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
 .record-body p.record-location { margin-top: var(--space-detail); }
 
 /* Recent News. */
-.news-list { --date-width: max-content; list-style: none; margin: 0; padding: 0; }
+.news-list { --date-width: 64px; list-style: none; margin: 0; padding: 0; }
 .news-list .record-body p { font-size: 14pt; }
 .news-list :is(a, strong) { color: var(--navy); font-weight: 600; }
 .news-list cite { font-family: var(--serif); font-weight: var(--serif-weight); }
