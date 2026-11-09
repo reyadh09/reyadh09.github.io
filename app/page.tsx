@@ -4,27 +4,27 @@ const recentNews = [
   {
     month: "Nov 2026",
     date: "2026-11",
-    text: <>Jeongin Choi joined our lab as an M.S. student. Welcome, Jeongin!</>,
+    text: <><strong>Jeongin Choi</strong> joined our lab as an M.S. student. Welcome, Jeongin!</>,
   },
   {
     month: "Oct 2026",
     date: "2026-10",
-    text: <>Our paper “DOD: Detection of Outliers in High Dimensional Data with Distance of Distances” was published in <cite>Statistics and Computing</cite>. <a href="https://link.springer.com/article/10.1007/s11222-026-11026-0" aria-label="Paper on high-dimensional outlier detection">Paper</a></>,
+    text: <>Our paper “<a href="https://link.springer.com/article/10.1007/s11222-026-11026-0">DOD: Detection of Outliers in High Dimensional Data with Distance of Distances</a>” was published in <cite>Statistics and Computing</cite>.</>,
   },
   {
     month: "Aug 2026",
     date: "2026-08",
-    text: <>Odonchimeg Senden earned an M.S. degree. Congratulations, Odonchimeg!</>,
+    text: <><strong>Odonchimeg Senden</strong> earned an M.S. degree. Congratulations, Odonchimeg!</>,
   },
   {
     month: "Jul 2026",
     date: "2026-07",
-    text: <>Our paper “Efficient Inference under Label Shift in Unsupervised Domain Adaptation” was published in the <cite>Journal of Machine Learning Research</cite>. <a href="https://www.jmlr.org/papers/v27/25-2717.html" aria-label="Paper on inference under label shift">Paper</a></>,
+    text: <>Our paper “<a href="https://www.jmlr.org/papers/v27/25-2717.html">Efficient Inference under Label Shift in Unsupervised Domain Adaptation</a>” was published in the <cite>Journal of Machine Learning Research</cite>.</>,
   },
   {
     month: "Mar 2026",
     date: "2026-03",
-    text: <>I received an Early Career Research Grant (Type B) from the National Research Foundation of Korea. <a href="https://research.uos.ac.kr/node/8556">Announcement</a></>,
+    text: <>I received an <strong>Early Career Research Grant (Type B)</strong> from the National Research Foundation of Korea.</>,
   },
 ];
 
