@@ -51,6 +51,11 @@ assert.match(home, /href="\/cv" target="_blank"/);
 assert.match(home, /Recent News/);
 const news = home.match(/<ul class="news-list"[^>]*>([\s\S]*?)<\/ul>/)?.[1];
 assert.ok(news, 'Missing Recent News list');
+const newsDates = [...news.matchAll(/<time\b[^>]*>([^<]*)<\/time>/g)];
+assert.ok(newsDates.length > 0, 'Missing Recent News dates');
+for (const [, date] of newsDates) {
+  assert.match(date, /^\d{4}\.(0[1-9]|1[0-2])$/, 'Recent News dates must use YYYY.MM');
+}
 for (const [link] of news.matchAll(/<a\b[^>]*>/g)) {
   assert.match(link, /\btarget="_blank"/, 'Recent News links must open in a new tab');
 }
