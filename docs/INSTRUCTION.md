@@ -4,7 +4,7 @@
 
 기존 Sites 미리보기: <https://seongho-lee.reflectivehawk1.chatgpt.site>
 
-**원본 코드와 유지보수 문서는 공개 저장소 `seongholee5/seongholee5.github.io` 하나에서 관리한다.** 이 문서는 `docs/INSTRUCTION.md`에 보관하며, 저장소 메인 화면에 문서가 펼쳐지지 않도록 루트 `README.md`는 비워둔다. 홈페이지 주소는 `https://seongholee5.github.io/`이다.
+**원본 코드와 유지보수 문서는 공개 저장소 `seongholee5/seongholee5.github.io` 하나에서 관리한다.** 이 문서는 `docs/INSTRUCTION.md`에 보관하며, 저장소 메인 화면에 문서가 펼쳐지지 않도록 루트 `README.md`는 비워둔다. 공개 홈페이지는 <https://seongholee5-github-io.pages.dev/>, 검토용 홈페이지는 <https://preview.seongholee5-github-io.pages.dev/>이다.
 
 ## 1. 기본 방향
 
@@ -318,7 +318,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 1. 최신 소스를 연 뒤 이 문서와 실제 변경 대상 파일을 확인한다. 기존 미완료 변경을 덮어쓰지 않는다.
 2. 내용 수정은 해당 데이터·페이지 파일에서, 디자인 수정은 공통 CSS 변수·컴포넌트에서 처리한다. 별도 지시 없는 페이지까지 시각 양식을 바꾸지 않는다.
 3. 변경 범위에 맞춰 아래 검증을 수행한다. 통과한 검증은 새로운 변경이나 문제가 없으면 반복하지 않는다.
-4. 앱을 바꾼 경우 소스를 커밋·push한 뒤 10절의 미리보기 산출물을 확인한다. 저장소 소유자가 해당 실행에서 승인하면 같은 빌드가 배포된다. 승인 후 배포 성공 여부를 확인한다.
+4. 앱을 바꾼 경우 `preview`에 커밋하고 10절의 검토용 페이지를 확인한다. 검토 링크와 커밋을 사용자에게 보내고 승인받은 뒤 해당 커밋을 `main`에 반영한다. 공개 페이지의 배포 결과를 확인한다.
 5. 승인된 기준이 바뀌었으면 INSTRUCTION도 같은 변경에 포함한다. INSTRUCTION만 수정한 경우 문서와 소스 기록을 저장하며 화면을 바꾸거나 다시 디자인하지 않는다.
 
 | 변경 범위 | 검증 |
@@ -356,18 +356,18 @@ CV 추가 시 기존 경력 기록 9개·연구 관심사 4개·논문 8개의 �
 - Lab의 과정→기간→한글 이름 정렬, 표 열 정렬, 긴 과정명 줄바꿈이 맞는가?
 - 확인용 임시 페이지·테스트 데이터가 배포 산출물에 포함되지 않았는가?
 
-## 10. GitHub 실행·배포 및 문서 관리
+## 10. Cloudflare Pages 검토·배포 및 문서 관리
 
 ### 하나의 공개 저장소
 
-- 원본 코드와 문서는 **`seongholee5/seongholee5.github.io`** 하나에서 관리한다. 저장소와 사이트는 공개이며 GitHub Free에서 운영한다.
+- 원본 코드와 문서는 **`seongholee5/seongholee5.github.io`** 하나에서 관리한다. 저장소는 GitHub Free, 홈페이지는 Cloudflare Pages 무료 플랜에서 운영한다.
 - 유지보수 문서는 **`docs/INSTRUCTION.md`**이다. 루트 **`README.md`는 빈 파일**로 유지해 저장소 메인 화면에 긴 유지보수 문서가 표시되지 않게 한다. 문서 자체는 공개 저장소에서 직접 열 수 있다.
 - 디자인·간격·정렬·CV 규칙을 바꾸면 관련 코드와 `docs/INSTRUCTION.md`를 같은 변경으로 갱신한다. 홈페이지 메뉴에는 이 문서 링크를 추가하지 않는다.
 - `app/`, `public/`, 빌드 설정, 검사 스크립트와 테스트가 편집 원본이다. `dist/client/`는 생성된 배포 결과물이며 Git에 저장하지 않는다.
-- GitHub Pages의 Source는 **GitHub Actions**이다. `.github/workflows/pages.yml`은 `main`이 바뀌면 테스트·타입 검사·정적 빌드를 실행한다. Markdown 문서만 바뀌면 이 실행을 생략한다.
-- Actions → **Preview and approve website deployment** → 해당 실행의 **Summary**에서 `website-preview` ZIP을 받는다. 압축을 풀고 `index.html`이 있는 폴더의 터미널에서 `python3 -m http.server 8000 --bind 127.0.0.1`을 실행한다. Windows에서는 `python3` 대신 `py`를 쓴다. 브라우저에서 `http://127.0.0.1:8000/`을 열어 확인한다.
-- 미리보기가 확인되면 같은 Actions 실행에서 **Review deployments → github-pages → Approve and deploy**를 선택한다. 저장소의 `github-pages` 환경은 `main`만 허용하고 `seongholee5`의 승인을 필수로 요구한다. 소유자가 시작한 실행도 직접 승인할 수 있으며 관리자 우회는 꺼 둔다. Codex로 수정할 때는 미리보기와 해당 실행 링크를 먼저 전달하고 승인을 기다린다.
-- 승인이 나면 미리보기와 같은 빌드의 `dist/client/`를 배포한다. 새 실행은 이전 대기 실행을 취소한다. 미리보기와 배포 산출물은 7일간 보관하므로 만료되면 **Run workflow**에서 `main`을 다시 빌드해 확인한다. 공개 저장소에는 비공개 자료를 커밋하지 않는다.
+- Cloudflare Pages 프로젝트 하나가 이 저장소를 사용한다. 공개 브랜치는 `main`이고 검토 브랜치는 `preview`이다. 빌드 명령은 `npm test && npm run typecheck && npm run build`, 출력 폴더는 `dist/client`, Node.js는 24이다.
+- 새 변경은 `main`을 기준으로 작업하고 `preview`에 올린다. 검토용 페이지에서 변경을 확인한 뒤 사용자에게 링크와 커밋을 보낸다. 같은 검토용 주소에 새 변경을 추가했다면 그 커밋에 대해 다시 승인받는다.
+- 사용자가 승인한 커밋을 `main`에 반영하면 Cloudflare가 공개 버전을 빌드한다. 승인받기 전에는 `main`에 변경을 올리지 않는다. `main`이 검토 이후에 바뀌면 변경을 합친 결과를 다시 검토한다.
+- 검토 주소는 링크로 열 수 있다. GitHub 저장소와 검토용 페이지에는 비공개 자료를 올리지 않는다. 기존 `github.io` 사이트는 이전 배포본이며 이후 업데이트는 Cloudflare Pages에서 진행한다.
 - 다른 저장소로 복사하거나 별도의 배포용 토큰을 관리하지 않는다.
 
 ### 실행과 검증
@@ -377,7 +377,7 @@ CV 추가 시 기존 경력 기록 9개·연구 관심사 4개·논문 8개의 �
 - 홈페이지와 CV는 같은 `app/academic-data.ts`를 사용한다.
 - `next.config.ts`는 `output: "export"`, `trailingSlash: false`이다. `scripts/check-static-export.mjs`가 `/about-me/`, `/research/`, `/lab/`, `/cv/`의 `index.html`을 생성한다. 각 페이지 직접 접속과 새로고침을 확인한다.
 - `.nojekyll`을 생성해 `_next/` 자산이 포함되게 한다. 빌드 검사에서 다섯 경로·로컬 자산·CV 제외 항목·새 창 링크·편집 원본 및 소스맵 제외를 확인한다. 유지보수 문서는 홈페이지 빌드 결과에 포함하지 않는다.
-- 루트 사용자 사이트 `seongholee5.github.io`를 전제로 한다. 프로젝트 하위 경로로 바꾸면 `/`로 시작하는 링크·이미지·CSS·JS 경로를 조정하고 재검증한다.
+- 공개용과 검토용 페이지 모두 각 도메인의 루트에 배포한다. 프로젝트 하위 경로로 바꾸면 `/`로 시작하는 링크·이미지·CSS·JS 경로를 조정하고 재검증한다.
 - 토큰·인증정보·환경 비밀값은 문서나 Git에 저장하지 않는다. `node_modules/`, `dist/`, `.env*`, 임시 미리보기 설정은 원본 버전 관리에서 제외한다.
 - 기존 Sites 소스와 공개 범위는 별도로 유지한다.
 

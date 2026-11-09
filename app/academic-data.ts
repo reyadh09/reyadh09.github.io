@@ -9,7 +9,7 @@ export const profile = {
   "department": "Department of Statistics",
   "university": "University of Seoul",
   "scholarUrl": "http://scholar.google.co.kr/citations?hl=en&user=Eq__vRcAAAAJ&view_op=list_works&sortby=pubdate",
-  "websiteUrl": "https://seongholee5.github.io/"
+  "websiteUrl": "https://seongholee5-github-io.pages.dev/"
 };
 
 export const academicSections: AcademicSection[] = [
