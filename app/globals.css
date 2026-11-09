@@ -216,7 +216,7 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
   .member-period-column { width: 22%; }
   .member-table th, .member-table td { padding-right: var(--space-small); }
   .member-table :is(th,td):last-child { padding-right: 0; }
-  .member-identity { gap: var(--space-detail); flex-direction: column; }
+  .member-identity { gap: 0; flex-direction: column; }
   .member-name { overflow-wrap: anywhere; }
 }
 @media(prefers-reduced-motion:reduce) {

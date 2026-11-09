@@ -275,7 +275,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 - Current members와 Alumni 각각 **Name / Program / Period** 3열 표를 쓴다. 과정별 별도 소제목·그룹 표는 만들지 않는다.
 - Name·Program은 왼쪽, Period는 오른쪽 정렬. 표 셀은 baseline 기준이다.
 - 영문 이름 14px/600, 한글 이름 12px/400, 과정 14px/400, 기간 12px/400으로 구분한다. 표 안의 줄높이는 모두 24px이다.
-- 넓은 화면의 영문·한글 이름 사이 gap은 12px이며 필요하면 줄바꿈한다. 모바일은 한글 이름을 아래 줄에 놓고 gap 4px를 둔다.
+- 넓은 화면의 영문·한글 이름 사이 gap은 12px이며 필요하면 줄바꿈한다. 가장 좁은 화면(≤560px)은 한글 이름을 아래 줄에 놓고 gap 0px로 붙인다. 두 이름의 줄높이는 각각 24px를 유지한다.
 - 표 셀 padding은 세로 12px, 오른쪽 12px(모바일 8px)이다. 마지막 열 오른쪽 padding, 마지막 행 하단 padding은 0이다.
 - 인턴 과정은 `Internship`, 박선현의 과정은 `MS/PhD integrated`로 표기한다.
 
