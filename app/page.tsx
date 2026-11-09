@@ -7,7 +7,7 @@ const recentNews = [
   },
   {
     date: "2026-10",
-    text: <>Our paper “<a href="https://link.springer.com/article/10.1007/s11222-026-11026-0" target="_blank" rel="noopener noreferrer">DOD: Detection of Outliers in High Dimensional Data with Distance of Distances</a>” was published in <cite>Statistics and Computing</cite>.</>,
+    text: <>Our paper “<a href="https://link.springer.com/article/10.1007/s11222-026-11026-0" target="_blank" rel="noopener noreferrer">DOD: Detection of outliers in high dimensional data with distance of distances</a>” was published in <cite>Statistics and Computing</cite>.</>,
   },
   {
     date: "2026-08",
@@ -15,7 +15,7 @@ const recentNews = [
   },
   {
     date: "2026-07",
-    text: <>Our paper “<a href="https://www.jmlr.org/papers/v27/25-2717.html" target="_blank" rel="noopener noreferrer">Efficient Inference under Label Shift in Unsupervised Domain Adaptation</a>” was published in the <cite>Journal of Machine Learning Research</cite>.</>,
+    text: <>Our paper “<a href="https://www.jmlr.org/papers/v27/25-2717.html" target="_blank" rel="noopener noreferrer">Efficient inference under label shift in unsupervised domain adaptation</a>” was published in the <cite>Journal of Machine Learning Research</cite>.</>,
   },
   {
     date: "2026-03",
