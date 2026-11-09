@@ -129,6 +129,7 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
 .news-list { --date-width: 64px; list-style: none; margin: 0; padding: 0; }
 .news-list :is(a, strong) { color: var(--navy); font-weight: 600; }
 .news-list cite { font-style: normal; }
+.news-list cite a svg { display: inline-block; vertical-align: middle; }
 
 /* Biography. */
 .page-biography .content-section:first-of-type { border-top: 0; padding-top: 0; }
