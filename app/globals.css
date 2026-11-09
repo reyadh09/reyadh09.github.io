@@ -189,9 +189,9 @@ h1 { font-family: var(--serif); font-size: var(--text-title); font-weight: var(-
   .profile { position: static; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-inline) var(--space-item); padding-bottom: var(--space-list); border-bottom: var(--section-rule); margin-bottom: var(--space-list); }
   .profile-secondary { display: none; }
   .portrait-frame { flex: 0 0 var(--portrait-width); margin: 0; }
-  .profile-information { flex: 0 0 var(--profile-width); max-width: 100%; text-align: center; }
-  .profile-links { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-detail) var(--space-inline); width: auto; }
-  .profile-links > :is(a,button) { gap: var(--space-small); }
+  .profile-information { flex: 0 0 auto; min-width: var(--profile-width); max-width: 100%; text-align: center; }
+  .profile-links { display: flex; flex-wrap: nowrap; justify-content: center; gap: var(--space-inline); width: auto; }
+  .profile-links > :is(a,button) { flex: 0 0 auto; gap: var(--space-small); white-space: nowrap; }
   .profile-links svg { width: 13px; height: 13px; }
   .email-link { width: auto; }
 }
