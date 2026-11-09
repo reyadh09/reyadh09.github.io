@@ -1,5 +1,5 @@
 // Shared content for the website and printable CV. Edit factual content here once.
-// Welcome copy stays in app/page.tsx; Lab data stays in app/lab/members.ts.
+// Welcome copy and Recent News stay in app/page.tsx; Lab data stays in app/lab/members.ts.
 export type AcademicRecord = { date: string; title: string; details: string; location?: string };
 export type AcademicSection = { id: string; title: string; records: AcademicRecord[] };
 

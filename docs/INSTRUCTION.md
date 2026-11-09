@@ -1,6 +1,6 @@
 # Seong-ho Lee's website — 유지보수 기준
 
-최종 정리일: **2026-11-09 (Asia/Seoul)**. 이 문서는 지금까지의 대화에서 승인되어 실제 적용된 About me, Research, Lab 및 별도 CV 화면·인쇄/PDF의 유지보수 기준이다. CV 인쇄 줄높이 14pt와 역할별 링크 반응까지 포함한다. 다음 업데이트 전에 이 문서와 변경 대상 코드를 함께 확인하고, 새로 승인된 규칙이 바뀔 때만 해당 기준을 갱신한다. 새 사용자 지시가 이 문서보다 우선한다.
+최종 정리일: **2026-11-09 (Asia/Seoul)**. 이 문서는 지금까지의 대화에서 승인되어 실제 적용된 Home, Biography, Research, Lab 및 별도 CV 화면·인쇄/PDF의 유지보수 기준이다. CV 인쇄 줄높이 14pt와 역할별 링크 반응까지 포함한다. 다음 업데이트 전에 이 문서와 변경 대상 코드를 함께 확인하고, 새로 승인된 규칙이 바뀔 때만 해당 기준을 갱신한다. 새 사용자 지시가 이 문서보다 우선한다.
 
 기존 Sites 미리보기: <https://seongho-lee.reflectivehawk1.chatgpt.site>
 
@@ -12,8 +12,8 @@
 - 기존 콘텐츠를 유지한다. 경력, 논문, 학생 정보, 연구 설명을 추측해서 추가하거나 고치지 않는다.
 - 사용자가 제공하거나 확인한 자료만 콘텐츠 업데이트에 반영한다. 최초 참고 자료는 [기존 Google Sites](https://sites.google.com/view/seongholee/about-me)이며, 이후 확정된 수정 사항은 이 저장소에 반영되어 있다.
 - 같은 역할의 텍스트·간격·구분선에는 공통 CSS 변수를 사용한다. 화면별로 임의의 글자 크기나 개별 예외를 만들지 않는다.
-- 상단에 작은 About me / Research / Lab 표제를 중복해서 넣지 않는다. 장식적인 IDEA 로고나 최상단 파란 선을 추가하지 않는다.
-- 넓은 화면(>900px)에서는 About me·Research·Lab 세 페이지에 프로필을 공유하며 sticky 동작을 유지한다. 좁은 화면(≤900px)에서는 About me에만 가운데 정렬된 프로필을 표시하고 Research·Lab은 메뉴 아래에서 바로 본문을 시작한다. 독립된 `/cv`에는 화면 폭과 무관하게 메뉴·사진·사이드바 프로필·사이트 푸터가 없다.
+- 상단에 작은 Home / Biography / Research / Lab 표제를 중복해서 넣지 않는다. 장식적인 IDEA 로고나 최상단 파란 선을 추가하지 않는다.
+- 넓은 화면(>900px)에서는 Home·Biography·Research·Lab 네 페이지에 프로필을 공유하며 sticky 동작을 유지한다. 좁은 화면(≤900px)에서는 Home에만 가운데 정렬된 프로필을 표시하고 Biography·Research·Lab은 메뉴 아래에서 바로 본문을 시작한다. 독립된 `/cv`에는 화면 폭과 무관하게 메뉴·사진·사이드바 프로필·사이트 푸터가 없다.
 - 실제로 적용된 규칙만 이 문서의 기준값으로 기록한다. 제안만 한 수치는 적용된 것으로 취급하지 않는다.
 - 콘텐츠 업데이트 시 기존 디자인을 유지한다. 마지막 추가 제안은 미적용 상태이며 자동으로 진행할 작업이 아니다(11절).
 
@@ -21,23 +21,24 @@
 
 | 영역 | 경로 | 수정 파일 | 브라우저 제목 |
 |---|---|---|---|
-| About me | `/` | `app/page.tsx` | `Seong-ho Lee \| About me` |
-| About me 별칭 | `/about-me` | `app/about-me/page.tsx` — 홈 재사용 | 동일 |
+| Home | `/` | `app/page.tsx` | `Seong-ho Lee \| Home` |
+| Biography | `/biography` | `app/biography/page.tsx` | `Seong-ho Lee \| Biography` |
+| Biography 별칭 | `/about-me` | `app/about-me/page.tsx` — Biography 재사용 | 동일 |
 | Research | `/research` | `app/research/page.tsx` | `Seong-ho Lee \| Research` |
 | Lab | `/lab` | `app/lab/page.tsx` | `Seong-ho Lee \| Lab` |
 | CV·인쇄/PDF 저장 | `/cv` | `app/cv/page.tsx`, `app/cv/cv.css`, `app/cv/print-button.tsx` | `Seong-ho Lee \| CV` |
 | 홈페이지·CV 공통 데이터 | — | `app/academic-data.ts` | — |
 | 멤버 데이터·정렬 | — | `app/lab/members.ts` | — |
-| 공통 메뉴·프로필·푸터·경력 행 | About me·Research·Lab | `app/site-components.tsx` | — |
-| 이메일 동작 | 위 세 페이지의 프로필 | `app/email-link.tsx` | — |
+| 공통 메뉴·프로필·푸터·경력 행 | Home·Biography·Research·Lab | `app/site-components.tsx` | — |
+| 이메일 동작 | 위 네 페이지의 프로필 | `app/email-link.tsx` | — |
 | 색상·텍스트·배치 | 공통 기반, CV는 전용 CSS로 재정의 | `app/globals.css` | — |
 | 공통 메타데이터 | 모든 페이지 | `app/layout.tsx` | — |
 | 웹폰트 원본·라이선스 | — | `app/fonts/cormorant-garamond/` | — |
 | 사진·파비콘 | — | `public/images/seongho-lee.jpg`, `public/favicon.svg` | — |
 
-사이트 표제는 정확히 `Seong-ho Lee's website`로 표시한다. 브라우저 제목은 `Seong-ho Lee | 페이지명` 순서이며 위 표의 제목을 사용한다. 메뉴 순서는 About me → Research → Lab이다. CV는 프로필 링크로 접근하며 상단 메뉴나 페이지 하단에 추가하지 않는다. 메뉴와 워드마크는 일반 `<a href>`로 이동하며, 클라이언트 라우터로 변경할 때는 실제 페이지 이동과 새로고침을 재검증한다.
+사이트 표제는 정확히 `Seong-ho Lee's website`로 표시한다. 브라우저 제목은 `Seong-ho Lee | 페이지명` 순서이며 위 표의 제목을 사용한다. 메뉴 순서는 Home → Biography → Research → Lab이다. CV는 프로필 링크로 접근하며 상단 메뉴나 페이지 하단에 추가하지 않는다. 메뉴와 워드마크는 일반 `<a href>`로 이동하며, 클라이언트 라우터로 변경할 때는 실제 페이지 이동과 새로고침을 재검증한다.
 
-`app/academic-data.ts`의 `profile`은 프로필과 CV, `academicSections`는 About me와 CV, `interests`·`publications`는 Research와 CV가 공유한다. Welcome 소개 문장(`app/page.tsx`)과 검색용 설명(`app/layout.tsx`의 `metadata.description`)은 별도 문자열이므로 직함·소속·경력 변경 시 함께 검토한다. `profile.websiteUrl`은 현재 화면이나 CV에 출력하지 않는다.
+`app/academic-data.ts`의 `profile`은 프로필과 CV, `academicSections`는 Biography와 CV, `interests`·`publications`는 Research와 CV가 공유한다. Welcome 소개 문장(`app/page.tsx`)과 검색용 설명(`app/layout.tsx`의 `metadata.description`)은 별도 문자열이므로 직함·소속·경력 변경 시 함께 검토한다. `profile.websiteUrl`은 현재 화면이나 CV에 출력하지 않는다.
 
 ## 3. 색상
 
@@ -49,7 +50,7 @@
 | 본문 | `--body-text: #506073` | 소개, 소속, 저자, 저널명, 과정 |
 | 보조 정보 | `--muted: #6b798c` | 날짜, 장소, 논문 연도, 주석, 한글 이름, Period, 비활성 메뉴 |
 | 일반 선 | `--line: #e0e7f0` | 헤더·사진·표 머리글 |
-| 섹션 선 | `#c4d2e4` | 큰 섹션 사이·좁은 화면의 About me 프로필 아래·푸터 위 |
+| 섹션 선 | `#c4d2e4` | 큰 섹션 사이·좁은 화면의 Home 프로필 아래·푸터 위 |
 | 항목 선 | `#edf1f6` | 경력·논문·연구 관심사 항목 |
 
 파비콘은 남색 `#153e70` 원 안의 흰색 소문자 시그마 `σ`이다. 링크 SVG는 `currentColor`를 따라간다. 워드마크와 제목에 서로 다른 남색을 사용하지 않는다.
@@ -74,7 +75,7 @@
 
 ## 4. 텍스트 규칙
 
-About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다. 자간은 **0px**이며, 제목에 음수 자간을 넣지 않는다. 세리프는 **Cormorant Garamond 600**, 산세리프는 **Arial**을 우선한다. 일반 본문은 400, 강조는 600이다. 별도 CV 문서와 인쇄 크기는 7절의 CV 규칙을 따른다.
+Home·Biography·Research·Lab은 모든 화면에서 동일한 크기를 사용한다. 자간은 **0px**이며, 제목에 음수 자간을 넣지 않는다. 세리프는 **Cormorant Garamond 600**, 산세리프는 **Arial**을 우선한다. 일반 본문은 400, 강조는 600이다. 별도 CV 문서와 인쇄 크기는 7절의 CV 규칙을 따른다.
 
 | 역할 | 크기 / 줄높이 | 서체·굵기 | 색상 |
 |---|---|---|---|
@@ -92,7 +93,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 | 날짜·장소·연도·논문 상태·주석·한글 이름·Period | 12px | Arial 400 | 보조색 |
 | 멤버 표 머리글 | 12 / 24px | Arial 600 | 보조색 |
 
-보조 정보의 기본 줄높이는 20px이다. 경력 행의 장소, 가장 좁은 화면(≤560px)의 About me 날짜, 논문 상태, 멤버 표 안의 한글 이름·Period는 같은 항목 안의 세로 정렬을 위해 **24px**를 사용한다. 숫자 메타데이터에는 `tabular-nums`를 적용한다.
+보조 정보의 기본 줄높이는 20px이다. 경력 행의 장소, 가장 좁은 화면(≤560px)의 Biography 날짜, 논문 상태, 멤버 표 안의 한글 이름·Period는 같은 항목 안의 세로 정렬을 위해 **24px**를 사용한다. 숫자 메타데이터에는 `tabular-nums`를 적용한다.
 
 - 이탤릭은 실제 저널명에만 사용한다. `submitted`는 일반 산세리프 보조 정보이다.
 - 링크의 기본색·hover·focus·아이콘 반응은 3절의 역할별 표를 따른다. 홈페이지 링크와 CV 문서 링크를 같은 규칙으로 일괄 변경하지 않는다.
@@ -113,7 +114,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 
 ## 5. 화면 폭과 레이아웃
 
-홈페이지 세 페이지의 CSS breakpoint는 **900px, 560px 두 개**이다. 대화에서 말한 '좁은 모드'는 561–900px, '가장 좁은 모드'는 ≤560px에 해당한다. 문서의 '중간 화면'은 좁은 모드, '모바일'은 가장 좁은 모드와 같은 의미이다. 폭은 브라우저의 CSS px 기준이며 확대된 스크린샷의 픽셀 수와 다르다. `box-sizing: border-box`를 사용한다. `/cv`의 독립 레이아웃은 7절을 따른다.
+홈페이지 네 페이지의 CSS breakpoint는 **900px, 560px 두 개**이다. 대화에서 말한 '좁은 모드'는 561–900px, '가장 좁은 모드'는 ≤560px에 해당한다. 문서의 '중간 화면'은 좁은 모드, '모바일'은 가장 좁은 모드와 같은 의미이다. 폭은 브라우저의 CSS px 기준이며 확대된 스크린샷의 픽셀 수와 다르다. `box-sizing: border-box`를 사용한다. `/cv`의 독립 레이아웃은 7절을 따른다.
 
 | 항목 | 넓은 모드 >900px | 좁은 모드 561–900px | 가장 좁은 모드 ≤560px |
 |---|---|---|---|
@@ -122,7 +123,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 | 본문 위 / 아래 여백 | 48 / 32px | 32 / 24px | 24 / 24px |
 | 메뉴바 높이 | 80px | 72px | 100px, 표제·메뉴 2줄 가운데 정렬 |
 | 메뉴 사이 간격 | 32px | 24px | 24px |
-| 프로필 표시 페이지 | About me·Research·Lab | About me만 | About me만 |
+| 프로필 표시 페이지 | Home·Biography·Research·Lab | Home만 | Home만 |
 | 프로필 배치 | 왼쪽 200px 열 | 상단 가로 묶음, 가운데 | 상단 가운데, 공간 부족 시 세로 |
 | 사진 테두리 포함 폭 | 200px | 144px | 144px |
 | 사진 프레임 내부 padding | 6px | 4px | 4px |
@@ -132,10 +133,10 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 | 멤버 표 열 비율 | 50 / 30 / 20% | 50 / 30 / 20% | 43 / 35 / 22% |
 
 - 넓은 화면의 프로필과 본문 사이 간격은 **48px 고정**(`--layout-gap`)이다. 화면이 커져도 간격을 늘리지 않는다. 본문 열은 `minmax(0, 1fr)`이다.
-- `AcademicShell`은 Research·Lab 프로필에 `profile-secondary` 클래스를 부여한다. ≤900px에서는 이 프로필 전체를 `display: none`으로 숨긴다. 사진·이름·소속·링크·프로필 아래 선과 그 여백이 함께 사라지며 빈 공간을 남기지 않는다. About me 별칭 `/about-me`도 홈 `/`과 같은 프로필 규칙을 사용한다.
+- `AcademicShell`은 Biography·Research·Lab 프로필에 `profile-secondary` 클래스를 부여한다. ≤900px에서는 이 프로필 전체를 `display: none`으로 숨긴다. 사진·이름·소속·링크·프로필 아래 선과 그 여백이 함께 사라지며 빈 공간을 남기지 않는다. 기존 `/about-me` 주소도 Biography와 같은 프로필 규칙을 사용한다.
 - 메뉴바는 모든 화면에서 상단 sticky이다. 넓은 화면 프로필도 sticky이며 top은 `메뉴바 높이 + 48px`이다. ≤900px의 프로필은 일반 문서 흐름을 따라 올라간다.
 - 가장 좁은 화면(≤560px)에서는 사이트 이름과 메뉴 묶음을 각각 가로 가운데 정렬한다. 메뉴 간격은 24px를 유지한다.
-- 중간 화면과 모바일(≤900px)의 About me에서는 사진+정보 묶음 전체, 정보 텍스트, 링크 묶음을 가운데 정렬한다. 560px 경계에서 프로필의 텍스트 정렬을 변경하지 않는다. 공간이 부족하면 사진과 정보 묶음 사이에서 줄바꿈하되, Google Scholar·CV·Email은 항상 한 줄로 유지한다. 정보 영역은 최소 200px에서 링크 세 개가 들어갈 폭까지 자연스럽게 넓어진다.
+- 중간 화면과 모바일(≤900px)의 Home에서는 사진+정보 묶음 전체, 정보 텍스트, 링크 묶음을 가운데 정렬한다. 560px 경계에서 프로필의 텍스트 정렬을 변경하지 않는다. 공간이 부족하면 사진과 정보 묶음 사이에서 줄바꿈하되, Google Scholar·CV·Email은 항상 한 줄로 유지한다. 정보 영역은 최소 200px에서 링크 세 개가 들어갈 폭까지 자연스럽게 넓어진다.
 - 사진 비율은 198:246이며 높이는 auto이다. 사진 폭은 테두리·padding을 포함한 외곽 폭으로, 넓은 화면은 200px, ≤900px는 모두 144px이다. 가장 좁은 화면에서도 사진을 추가로 축소하지 않는다.
 - 프로필의 사진과 정보 사이 간격은 넓은 화면 세로 24px, 좁은 화면 가로 24px / 줄바꿈 시 세로 16px이다.
 - 푸터 선은 사이트 콘텐츠 영역의 좌우 바깥 경계와 정렬하며, Back to top만 오른쪽에 둔다. `.site-layout` 하단 padding은 넓은 화면 32px, ≤900px는 24px이다. 넓은 화면에서 프로필이 본문보다 높으면 더 긴 열을 기준으로 푸터가 내려간다. 푸터 선 아래 링크까지 padding은 24px, 링크 아래 padding은 32px이다.
@@ -172,7 +173,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 
 | 구분선 역할 | 굵기 / 색 | 적용 |
 |---|---|---|
-| 큰 섹션 구분 | 1.5px / `#c4d2e4` | About 섹션, Publications 시작, Current members↔Alumni, ≤900px의 About me 프로필 아래, 모든 화면의 Back to top 위 |
+| 큰 섹션 구분 | 1.5px / `#c4d2e4` | Recent News·Biography 섹션, Publications 시작, Current members↔Alumni, ≤900px의 Home 프로필 아래, 모든 화면의 Back to top 위 |
 | 목록 항목 구분 | 1px / `#edf1f6` | 경력·논문 항목 사이, 연구 관심사 행 사이(첫 행 제외) |
 | 일반 경계 | 1px / `#e0e7f0` | 메뉴바 아래, 사진, 표 머리글 |
 | 선택된 메뉴 표시 | 2px / 파랑 | 활성 메뉴 아래 |
@@ -183,14 +184,20 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 
 ## 7. 페이지별 구성
 
-### About me
+### Home
 
-순서: **Welcome! → Employment → Education → Grants → Appointment → Awards**.
+순서: **Welcome! → Recent News**.
 
-- Welcome!은 다른 섹션과 같은 24px 제목이다. 대형 히어로 문구나 작은 ABOUT ME 표제를 넣지 않는다.
-- 소개 문단은 16px/28px, 경력 설명 등 일반 본문은 14px/24px이다.
+- Welcome!과 Recent News는 24px 제목을 사용한다. 소개 문단은 16px/28px이다.
+- `app/page.tsx`의 뉴스는 `Nov 2026` 형식으로 최신 월부터 나열한다. 모바일에서는 각 뉴스의 날짜를 문장 위에 표시한다.
+
+### Biography
+
+순서: **Biography → Employment → Education → Grants → Appointment → Awards**.
+
+- 경력 설명 등 일반 본문은 14px/24px이다.
 - 기록은 `RecordRow(date, title, details, location?)`를 재사용한다. 넓은 화면·중간 화면에서는 왼쪽 날짜 열과 오른쪽 내용 열(제목 → 소속/설명 → 장소/기관)을 사용한다.
-- 경력·학력·과제·보직·수상 내용은 `app/academic-data.ts`의 `academicSections`에서 한 번만 수정한다. About me와 CV가 같은 배열을 읽는다. Welcome 소개문은 `app/page.tsx`에 별도로 유지한다.
+- 경력·학력·과제·보직·수상 내용은 `app/academic-data.ts`의 `academicSections`에서 한 번만 수정한다. Biography와 CV가 같은 배열을 읽는다. Welcome 소개문은 `app/page.tsx`에 별도로 유지한다.
 - 날짜 열 너비는 넓은 화면·중간 화면 모두 128px이며, 내용 열과의 간격은 16px. 가장 좁은 화면(≤560px)에서는 제목 → 소속/설명 → 장소/기관 → 날짜 순으로 배치한다. 날짜는 내용 전체 아래에 4px 간격으로 놓고 글자 크기 12px, 줄높이 24px, 보조색을 사용한다. 장소/기관이 없는 항목도 날짜를 맨 아래에 놓는다.
 - Employment·Education·Awards는 현재 최신 기록부터 나열한다. 새 기록 추가 시 같은 방식으로 편집한다.
 - 기간 표기는 기존 `2024 ~ Present`, `2018 ~ 2023`, `2026.03 ~ 2031.02` 형식을 따른다. 사실 확인 없이 날짜를 바꾸지 않는다.
@@ -311,7 +318,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 - Email 주소 변경은 `app/email-link.tsx`의 인코딩 값에서 처리한다. 주소를 INSTRUCTION·프로필 텍스트·공통 데이터에 평문으로 추가하지 않는다.
 - 메뉴의 `aria-current`, Skip to main content, 표의 `scope`와 `aria-labelledby`, 사진의 alt, 버튼의 키보드 동작, focus 표시를 유지한다.
 - `prefers-reduced-motion`에서는 전환 효과와 부드러운 스크롤을 비활성화한다.
-- 인쇄 시 메뉴·푸터·프로필 링크를 숨기고 프로필을 일반 흐름에 배치한다. 인쇄용 사진 폭은 100px이다. 인쇄 CSS는 화면용 프로필 숨김을 덮어써 세 페이지 모두 프로필을 표시한다.
+- 인쇄 시 메뉴·푸터·프로필 링크를 숨기고 프로필을 일반 흐름에 배치한다. 인쇄용 사진 폭은 100px이다. 인쇄 CSS는 화면용 프로필 숨김을 덮어써 네 페이지 모두 프로필을 표시한다.
 
 ## 9. 업데이트 절차와 검증
 
@@ -324,7 +331,7 @@ About me·Research·Lab은 모든 화면에서 동일한 크기를 사용한다.
 | 변경 범위 | 검증 |
 |---|---|
 | INSTRUCTION만 변경 | `git diff --check`, 실제 코드·대화와 수치 및 규칙 대조. 앱 재빌드·화면 재검증 불필요 |
-| 콘텐츠·레이아웃·공통 컴포넌트 | 관련 페이지 화면 확인 및 `npm run build`. 공통 스타일이면 세 페이지 확인 |
+| 콘텐츠·레이아웃·공통 컴포넌트 | 관련 페이지 화면 확인 및 `npm run build`. 공통 스타일이면 네 페이지 확인 |
 | 글꼴·글꼴 로딩 | 빌드 후 `node scripts/check-font-assets.mjs`, 새로고침 시 글꼴 표시 확인 |
 | 링크 반응 | 기본·hover·키보드 focus를 3절과 대조. Email은 실제 메일 앱을 열지 않고 아이콘·밑줄을 확인하며, Back to top과 논문 링크도 별도로 확인 |
 | CV 서식·출력 | 화면과 `@media print`를 나누어 확인. 인쇄 가능한 환경에서는 A4 PDF의 머리말·페이지 나눔·버튼 숨김을 확인하고 불가능하면 한계를 기록 |
@@ -343,14 +350,14 @@ CV 추가 시 기존 경력 기록 9개·연구 관심사 4개·논문 8개의 �
 - 프로필의 Google Scholar → CV → Email 순서, `/cv` 새 탭 열기, 인쇄 버튼이 작동하는가? 공통 데이터 변경 시 홈페이지와 CV에 함께 반영되는가?
 - CV에 Welcome과 Lab 내용이 없고, 인쇄에서 도구 영역이 숨겨지며 날짜 열·글꼴·페이지 나눔이 유지되는가?
 - CV 화면은 홈페이지 크기 체계(28·24·16·14·12px), 인쇄는 18·16·10·8pt이며 항목 제목과 본문이 모두 10pt/14pt인가? 화면 본문 줄높이 24px는 유지되는가?
-- 넓은 화면은 세 페이지 모두 프로필이 있고, ≤900px는 About me에만 있는가? Research·Lab에 프로필 자리의 빈 여백이 남지 않는가?
+- 넓은 화면은 네 페이지 모두 프로필이 있고, ≤900px는 Home에만 있는가? Biography·Research·Lab에 프로필 자리의 빈 여백이 남지 않는가?
 - 프로필 이름 24px, 직함 16px, 소속 14px, 링크 12px, 메뉴 16px가 유지되는가?
 - 프로필 링크는 줄높이 24px, 세로 간격 4px이며 위 이름·직함·소속의 양식은 유지되는가?
-- ≤560px About me 날짜가 각 항목 맨 아래의 12px/24px로 표시되고, Research 연도는 기존 왼쪽 열을 유지하는가?
+- ≤560px Biography 날짜가 각 항목 맨 아래의 12px/24px로 표시되고, Research 연도는 기존 왼쪽 열을 유지하는가?
 - Research interests 제목→첫 항목은 24px이고, 첫 행 위 선은 없으며 이후 행의 얇은 선만 남아 있는가?
 - 저널명은 16px 이탤릭이며 일반·이탤릭 폰트가 배포 CSS에 포함되어 있고, 새로고침 시 굵은 대체 글꼴이 먼저 보이지 않는가?
 - 항목 안의 4px 간격, 섹션 선과 목록 선의 역할·여백이 유지되는가?
-- About me 프로필 아래(≤900px)와 Back to top 위 선은 1.5px 섹션 선인가? 푸터 화살표는 같은 SVG 형식인가?
+- Home 프로필 아래(≤900px)와 Back to top 위 선은 1.5px 섹션 선인가? 푸터 화살표는 같은 SVG 형식인가?
 - 프로필·지도교수·Back to top은 파랑→남색, 논문 제목은 남색→파랑이며 텍스트 밑줄 1px·간격 4px·색상 전환 0.18초가 유지되는가?
 - Email을 포함한 프로필 아이콘은 오른쪽 위로 1px, Back to top은 위로만 1px 이동하는가? 아이콘과 빈 공간에 밑줄이 생기지 않는가?
 - Lab의 과정→기간→한글 이름 정렬, 표 열 정렬, 긴 과정명 줄바꿈이 맞는가?
@@ -375,7 +382,7 @@ CV 추가 시 기존 경력 기록 9개·연구 관심사 4개·논문 8개의 �
 - Node.js **24 권장**, 최소 22.13, React/TypeScript + Vinext 기반이다. 공개 사이트에 데이터베이스·서버 런타임·ChatGPT 로그인은 필요하지 않다.
 - 설치 `npm ci`, 개발 `npm run dev`, 정렬 검사 `npm test`, 타입 검사 `npm run typecheck`, 정적 빌드·검사 `npm run build`.
 - 홈페이지와 CV는 같은 `app/academic-data.ts`를 사용한다.
-- `next.config.ts`는 `output: "export"`, `trailingSlash: false`이다. `scripts/check-static-export.mjs`가 `/about-me/`, `/research/`, `/lab/`, `/cv/`의 `index.html`을 생성한다. 각 페이지 직접 접속과 새로고침을 확인한다.
+- `next.config.ts`는 `output: "export"`, `trailingSlash: false`이다. `scripts/check-static-export.mjs`가 `/about-me/`, `/biography/`, `/research/`, `/lab/`, `/cv/`의 `index.html`을 생성한다. 각 페이지 직접 접속과 새로고침을 확인한다.
 - `.nojekyll`을 생성해 `_next/` 자산이 포함되게 한다. 빌드 검사에서 다섯 경로·로컬 자산·CV 제외 항목·새 창 링크·편집 원본 및 소스맵 제외를 확인한다. 유지보수 문서는 홈페이지 빌드 결과에 포함하지 않는다.
 - 공개용과 검토용 페이지 모두 각 도메인의 루트에 배포한다. 프로젝트 하위 경로로 바꾸면 `/`로 시작하는 링크·이미지·CSS·JS 경로를 조정하고 재검증한다.
 - 토큰·인증정보·환경 비밀값은 문서나 Git에 저장하지 않는다. `node_modules/`, `dist/`, `.env*`, 임시 미리보기 설정은 원본 버전 관리에서 제외한다.

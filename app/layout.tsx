@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Seong-ho Lee | About me",
+  title: "Seong-ho Lee | Home",
   description: "Seong-ho Lee, Assistant Professor, Department of Statistics, University of Seoul.",
   icons: {
     icon: "/favicon.svg?v=sigma",

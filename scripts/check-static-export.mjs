@@ -3,7 +3,7 @@ import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path';
 
 const output = resolve('dist/client');
-const routes = ['about-me', 'research', 'lab', 'cv'];
+const routes = ['about-me', 'biography', 'research', 'lab', 'cv'];
 // Vinext's trailingSlash export currently skips redirecting routes. Export
 // without redirects, then provide directory indexes for GitHub Pages URLs.
 for (const route of routes) {
@@ -48,4 +48,11 @@ assert.match(cv, /Print \/ Save PDF/);
 assert.doesNotMatch(cv, /class="site-header"|Welcome!|Current members|Google Scholar/);
 const home = await readFile(join(output, 'index.html'), 'utf8');
 assert.match(home, /href="\/cv" target="_blank"/);
+assert.match(home, /Recent News/);
+assert.doesNotMatch(home, /id="employment"/);
+const biography = await readFile(join(output, 'biography/index.html'), 'utf8');
+for (const section of ['employment', 'education', 'grants', 'appointment', 'awards']) {
+  assert.ok(biography.includes(`id="${section}"`), `Missing Biography section ${section}`);
+}
+assert.doesNotMatch(biography, /id="recent-news"/);
 console.log(`Verified ${routes.length + 1} pages and ${files.length} public files; README, source files and source maps excluded.`);
